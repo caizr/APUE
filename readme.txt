@@ -12,3 +12,7 @@ chapter_1 NOTICE:
                响了。pread为原子操作，不会中断其定位、读写操作
                open("filepath",O_CREAT|O_EXCL)组成原子操作
             2. fcntl(int fd,int cmd,...)
+chapter_4:  stat(),lstat(),fstat,fstatat();
+chapter_1 NOTICE: 
+            1. stat()不能检测符号连接，lstat()可以检测；
+            2. S_ISxxx宏
