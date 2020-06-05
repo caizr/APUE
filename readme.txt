@@ -16,3 +16,4 @@ chapter_4:  stat(),lstat(),fstat,fstatat();
 chapter_1 NOTICE: 
             1. stat()不能检测符号连接，lstat()可以检测；
             2. S_ISxxx宏
+            3. te
