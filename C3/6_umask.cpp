@@ -18,6 +18,7 @@
 #define RWRWRW (S_IRUSR|S_IWUSR|S_IRGRP|S_IWGRP|S_IROTH|S_IROTH)
 int main(){
     using namespace std;
+
     if(creat("6_1.txt",RWRWRW)<0)
         cout<<"create 6_1.txt error!"<<endl;
 

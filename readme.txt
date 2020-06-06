@@ -15,6 +15,8 @@ chapter_1 NOTICE:
 chapter_4:  stat(),lstat(),fstat,fstatat();acess()和faccessat()
             检查文件的权限;umask()屏蔽之后进程创建文件的部分权限;
     疑问 :   使用6_umask.cpp中使用creat()创建文件,组和其他都没有写权限 
+            应该是与umask有关，在终端输入umask就可以发现程序的umask会
+            影响到全局
 chapter_1 NOTICE: 
             1. stat()不能检测符号连接，lstat()可以检测；
             2. S_ISxxx()宏
@@ -26,4 +28,7 @@ chapter_1 NOTICE:
                    具备执行权限！！！
                 d. 为了删除一个现有文件，包含该文件的目录除了写权限之外,
                    还应该具备执行权限！！！
-            4. 
+            4. 使用chmod修改某个文件的权限时，如果直接执行以下语句：
+                     chmod("6_3.txt",S_IRGRP|S_IWGRP);
+               会造成用户和其他的权限位为空，所以最好使用stat结构体里面
+               的st_mode进行或运算
