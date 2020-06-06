@@ -3,6 +3,6 @@
 #include<sys/stat.h>
 
 int main(){
-    std::cout<<OPEN_MAX-1<<"and"<<NAME_MAX<<std::endl;
+    std::cout<<FOPEN_MAX-1<<"and"<<std::endl;
     return 0;
 }

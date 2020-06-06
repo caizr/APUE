@@ -12,7 +12,18 @@ chapter_1 NOTICE:
                响了。pread为原子操作，不会中断其定位、读写操作
                open("filepath",O_CREAT|O_EXCL)组成原子操作
             2. fcntl(int fd,int cmd,...)
-chapter_4:  stat(),lstat(),fstat,fstatat();
+chapter_4:  stat(),lstat(),fstat,fstatat();acess()和faccessat()
+            检查文件的权限;umask()屏蔽之后进程创建文件的部分权限;
+    疑问 :   使用6_umask.cpp中使用creat()创建文件,组和其他都没有写权限 
 chapter_1 NOTICE: 
             1. stat()不能检测符号连接，lstat()可以检测；
-            2. S_ISxxx宏
+            2. S_ISxxx()宏
+            3. 文件夹具有执行权限的意义：
+                a. 为了打开 /usr/include/stdio.h, 目录/, /usr以及
+                   /usr/include需要具备执行权限！！！
+                b. 目录的执行权限使得我们能够搜索目录
+                c. 为了在目录中创建文件，目录除了具备写权限之外，还应该
+                   具备执行权限！！！
+                d. 为了删除一个现有文件，包含该文件的目录除了写权限之外,
+                   还应该具备执行权限！！！
+            4. 
