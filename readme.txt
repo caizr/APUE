@@ -14,10 +14,11 @@ chapter_1 NOTICE:
             2. fcntl(int fd,int cmd,...)
 chapter_4:  stat(),lstat(),fstat,fstatat();acess()和faccessat()
             检查文件的权限;umask()屏蔽之后进程创建文件的部分权限;
+            link(),linkat()函数; rename()函数; 
     疑问 :   使用6_umask.cpp中使用creat()创建文件,组和其他都没有写权限 
             应该是与umask有关，在终端输入umask就可以发现程序的umask会
             影响到全局
-chapter_1 NOTICE: 
+chapter_4 NOTICE: 
             1. stat()不能检测符号连接，lstat()可以检测；
             2. S_ISxxx()宏
             3. 文件夹具有执行权限的意义：
@@ -32,3 +33,8 @@ chapter_1 NOTICE:
                      chmod("6_3.txt",S_IRGRP|S_IWGRP);
                会造成用户和其他的权限位为空，所以最好使用stat结构体里面
                的st_mode进行或运算
+            5. 使用link函数只是建立一个连接，这几个文件指向的是磁盘的同
+               一内容，也就是说，当前文件夹如果有1个文件，多个此文件连接
+               的话，该文件夹的占用空间仍然只有这1个文件的大小，仔细体会。
+            6. rename()函数分为好几种情况(newpath为目录、符号连接，或者
+                已经存在该文件/目录等)
