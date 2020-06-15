@@ -14,12 +14,10 @@ chapter_1 NOTICE:
             2. fcntl(int fd,int cmd,...)
 chapter_4:  stat(),lstat(),fstat,fstatat();acess()和faccessat()
             检查文件的权限;umask()屏蔽之后进程创建文件的部分权限;
-<<<<<<< HEAD
             link(),linkat()函数; rename()函数; 
-=======
             chown(),fchown,fchownat(),lchown()没怎么看
             truncate(),ftruncate()截断文件;
->>>>>>> b0a0055c982d294c320f20f048fbb74390a7cd3b
+            symlink()创建符号连接;
     疑问 :   使用6_umask.cpp中使用creat()创建文件,组和其他都没有写权限 
             应该是与umask有关，在终端输入umask就可以发现程序的umask会
             影响到全局
@@ -43,3 +41,6 @@ chapter_4 NOTICE:
                的话，该文件夹的占用空间仍然只有这1个文件的大小，仔细体会。
             6. rename()函数分为好几种情况(newpath为目录、符号连接，或者
                 已经存在该文件/目录等)
+            7. 使用OPEN打开一个符号连接文件的时候，OPEN实际上是在操作符号
+               连接指向的那个文件。如果要对符号连接本身进行处理，需要用
+               readlink()函数
