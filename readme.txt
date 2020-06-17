@@ -16,7 +16,10 @@ chapter_4:  stat(),lstat(),fstat,fstatat();acess()和faccessat()
             检查文件的权限;umask()屏蔽之后进程创建文件的部分权限;
             link(),linkat()函数; rename()函数; 
             chown(),fchown,fchownat(),lchown()没怎么看
-            truncate(),ftruncate()截断文件;
+            truncate(),ftruncate()截断文件; mkdir(), rmdir()创建
+            以及删除文件夹; 4.22实例-降序遍历文件夹没有看; chdir()切
+            换当前进程的工作目录; getcwd()获取当前工作目录的绝对路径
+
     疑问 :   使用6_umask.cpp中使用creat()创建文件,组和其他都没有写权限 
             应该是与umask有关，在终端输入umask就可以发现程序的umask会
             影响到全局
@@ -40,3 +43,4 @@ chapter_4 NOTICE:
                的话，该文件夹的占用空间仍然只有这1个文件的大小，仔细体会。
             6. rename()函数分为好几种情况(newpath为目录、符号连接，或者
                 已经存在该文件/目录等)
+            7. mkdir()的mode参数为S_IRWXU那一类
