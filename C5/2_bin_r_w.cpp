@@ -10,12 +10,13 @@ struct Student{
     string name;
     int age;
     int score;
+    Student(string n,int a,int s): name(n),age(a),score(s){};
     ~Student(){
         cout<<"delete"<<endl;
     }
 };
 int main(){
-   Student s1{"petter",12,100};
+   Student s1("petter",12,100);
    // 创建读取流
    FILE * f1=fopen("2_bin_files.txt","w+");
    // 输写入的字节数
