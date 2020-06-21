@@ -14,12 +14,13 @@ chapter_1 NOTICE:
             2. fcntl(int fd,int cmd,...)
 chapter_4:  stat(),lstat(),fstat,fstatat();acess()和faccessat()
             检查文件的权限;umask()屏蔽之后进程创建文件的部分权限;
-            link(),linkat()函数; rename()函数; 
+            link(),linkat()函数; rename()函数;symlink()创建符号连接;
             chown(),fchown,fchownat(),lchown()没怎么看
             truncate(),ftruncate()截断文件; mkdir(), rmdir()创建
             以及删除文件夹; 4.22实例-降序遍历文件夹没有看; chdir()切
             换当前进程的工作目录; getcwd()获取当前工作目录的绝对路径
-            symlink()创建符号连接;
+            4.24跳过
+            
     疑问 :   使用6_umask.cpp中使用creat()创建文件,组和其他都没有写权限 
             应该是与umask有关，在终端输入umask就可以发现程序的umask会
             影响到全局
@@ -47,3 +48,15 @@ chapter_4 NOTICE:
             8. 使用OPEN打开一个符号连接文件的时候，OPEN实际上是在操作符号
                连接指向的那个文件。如果要对符号连接本身进行处理，需要用
                readlink()函数
+
+chapter_5:  setbuf(),setvbuf()修改流的缓存类型;fflush()强制冲洗流；
+            fopen(),freopen(),fdopen打开流; fclose()关闭流; 
+            ferror(),feof()返回流的状态信息（出错还是到达末尾），
+            clearerr()清除状态信息；
+            getc(),fgetc(),getchar()以及putc(),fputc,putchar();
+
+            
+    疑问 :   使
+chapter_5 NOTICE: 
+            1. 标准I/O行缓冲的特点
+            2. getc()为宏,fgetc()为函数, putc()和fputc()类似
