@@ -23,7 +23,7 @@ int main(){
    fclose(f1);
    // 创建新的读取流
    FILE * f2=fopen("2_bin_files.txt","r");
-   Student *s2 = ;
+   Student *s2;
    // 输出读取的字节数
    cout<<"read "<<fread(&s2,sizeof(s2),sizeof(s2),f2)<<" bytes"<<endl;
    fclose(f2);
