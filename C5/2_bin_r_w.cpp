@@ -23,7 +23,8 @@ int main(){
    // 输写入的字节数
   cout<<"write "<<fwrite(&s1,sizeof(s1),sizeof(s1),f1)<<" bytes"<<endl;
    // 创建新的读取流
-   FILE * f2=fopen("2_bin_file.txt","r");
+   fflush(NULL);
+   FILE * f2=fopen("2_bin_files.txt","r");
    Student *s2 = new Student{"a",0,0};
    // 输出读取的字节数
    cout<<"read "<<fread(s2,sizeof(s2),40,f2)<<" bytes"<<endl;
