@@ -54,9 +54,15 @@ chapter_5:  setbuf(),setvbuf()修改流的缓存类型;fflush()强制冲洗流�
             ferror(),feof()返回流的状态信息（出错还是到达末尾），
             clearerr()清除状态信息；
             getc(),fgetc(),getchar()以及putc(),fputc,putchar();
+            fread(),fwrite()读写二进制文件;
+            ftell(),fseek(),ftello(),fseeko()文件偏移；
+            fgetpos(),fsetpos()适用于跨平台，偏移量超出off_t范围，所以
+            更通用
 
             
-    疑问 :   使
+    疑问 :   1. fwrite()之后再fread()出现segmention错误(2_cpp还是🈶
+                这个问题)
 chapter_5 NOTICE: 
             1. 标准I/O行缓冲的特点
             2. getc()为宏,fgetc()为函数, putc()和fputc()类似
+            3. ftello(), fseeko()与没有o的区别就是偏移量的类型是off_t
