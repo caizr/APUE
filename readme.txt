@@ -58,6 +58,10 @@ chapter_5:  setbuf(),setvbuf()修改流的缓存类型;fflush()强制冲洗流�
             ftell(),fseek(),ftello(),fseeko()文件偏移；
             fgetpos(),fsetpos()适用于跨平台，偏移量超出off_t范围，所以
             更通用
+            printf(),fprintf(),dprintf(),sprintf(),snprintf();格式
+            化控制输出
+            同理scanf()函数族
+            
 
             
     疑问 :   1. fwrite()之后再fread()出现segmention错误(2_cpp还是🈶
