@@ -74,3 +74,13 @@ chapter_5 NOTICE:
             4. 对于mkdtemp(),mkstemp(), 参数应该是char[] 而不是char *，
                因为char * 指向的是常量区, 修改这个区域会出现seg error
             5. mkdtemp()和mkstemp()创建的临时目录和文件不会被删除
+
+
+chapter_6:  pwd.h中的passwd结构; getpuid(),getpwnam()获取passwd结构;
+            getpwent(),setpwent(),endpwent()按顺序查看所有口令
+            
+    疑问 :   1. fw
+chapter_6 NOTICE: 
+            1. getpwent()从uid=0开始访问用户，访问结束需要使用endpwent()
+               关闭文件否则下次getpwent()不是从头开始。使用setpwent()可以
+               重置，是getpwent()从0开始。
