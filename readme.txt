@@ -79,7 +79,9 @@ chapter_5 NOTICE:
 chapter_6:  pwd.h中的passwd结构; getpuid(),getpwnam()获取passwd结构;
             getpwent(),setpwent(),endpwent()按顺序查看所有口令； 阴影
             口令；系统标识 utsname结构, gethostname()函数; time()函数和
-            clock_gettime()函数获取时间
+            clock_gettime()函数获取时间; tm结构，gmtime()，localtime()
+            函数将秒级精度的时间转换为熟悉的时间结构，strftime()将tm结构打印
+            出设定的格式, strptime()即将字符串转换为tm时间结构
             
     疑问 :   1. fw
 chapter_6 NOTICE: 

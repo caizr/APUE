@@ -58,7 +58,7 @@ int main(){
 
     // 打印 tm结构的时间格式 
     char buf_tm[100];
-    int aa=strftime(buf_tm,100,"time: %c ",tm1);
+    int aa=strftime(buf_tm,100,"time: %c %Z",tm1);
     cout<< "write bytes(not include '\\0'): "<<aa<<endl
         <<buf_tm<<endl;
     return 0;
