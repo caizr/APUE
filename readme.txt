@@ -83,9 +83,30 @@ chapter_6:  pwd.h中的passwd结构; getpuid(),getpwnam()获取passwd结构;
             函数将秒级精度的时间转换为熟悉的时间结构，strftime()将tm结构打印
             出设定的格式, strptime()即将字符串转换为tm时间结构
             
-    疑问 :   1. fw
+    疑问 :   1. 
 chapter_6 NOTICE: 
             1. getpwent()从uid=0开始访问用户，访问结束需要使用endpwent()
                关闭文件否则下次getpwent()不是从头开始。使用setpwent()可以
                重置，是getpwent()从0开始。
             
+
+chapter_7:  进程环境。exit(),_Exit(),_exit()函数用于正常终止一个程序；
+            atexit()在exit时添加一些要执行的函数； argc命令行参数; 
+            environ环境变量; gxx -static 编译; malloc(size_t), 
+            calloc(size_t,size_t),realloc(void *,size_t),free(void *)
+            分配、释放空间
+            
+    疑问 :   1. fw
+chapter_7 NOTICE: 
+            1. return 0与exit(0) 作用是一样的（main函数中），都会退出程序
+               （并关闭一些已经
+               打开的流等清理操作）。
+            2. 了解c程序是如何启动的，以及它终止的各种方式（图7-2），注意，在
+               某个函数中调用exit()或导致整个程序都退出!所以刚才第一点说的return
+               和exit作用一样的前提是在main函数执行。
+            3. atexit()装填顺序与调用顺序是相反的
+            4. 环境表需要声明： extern char **environ或者在main()的第三个参数
+               main(int argc, char **argv, char **envp),但是不推荐使用这个。
+            5. gcc/g++ -static 编译的时候，将任何依赖的函数包含进去，所以编译出来
+               的文件会很大，但是编译出来的程序不依赖任何库
+            6. malloc()分配的空间内的数据是随即,calloc()全部清0
