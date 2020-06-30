@@ -9,13 +9,14 @@
 using namespace std;
 
 int main(){
-
-    if( fork() == 0){   //子进程
+    pid_t p;
+    if( (p=fork()) == 0){   //子进程
         cout<<"child process"<<endl;
         sleep(5);
         exit(0);
     }
     int a;
+    waitpid(p,&a,WCONTINUED);
     pid_t p1=wait(&a);
     cout<<"child PID: "<<p1<<endl;
     return 0;
