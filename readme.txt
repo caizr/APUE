@@ -94,9 +94,12 @@ chapter_7:  进程环境。exit(),_Exit(),_exit()函数用于正常终止一个�
             atexit()在exit时添加一些要执行的函数； argc命令行参数; 
             environ环境变量; gxx -static 编译; malloc(size_t), 
             calloc(size_t,size_t),realloc(void *,size_t),free(void *)
-            分配、释放空间
+            分配、释放空间; getenv(),putenv(),setenv(),unsetenv()获取、
+            修改、删除某个环境变量
             
-    疑问 :   1. fw
+    疑问 :   
+            1. setjump, longjump跳转没有看
+            2. 资源限制没有看 
 chapter_7 NOTICE: 
             1. return 0与exit(0) 作用是一样的（main函数中），都会退出程序
                （并关闭一些已经
@@ -110,3 +113,6 @@ chapter_7 NOTICE:
             5. gcc/g++ -static 编译的时候，将任何依赖的函数包含进去，所以编译出来
                的文件会很大，但是编译出来的程序不依赖任何库
             6. malloc()分配的空间内的数据是随即,calloc()全部清0
+            7. 不要用putenv(), 因为putenv的参数不会开辟的新的空间来存放这个字符串，
+               所以如果这个字符串假如在栈里面，很容易出问题（比如栈空间释放），参考
+               图7-6
