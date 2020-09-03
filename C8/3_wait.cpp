@@ -17,7 +17,7 @@ int main(){
     }
     int a;
     waitpid(p,&a,WCONTINUED);
-    pid_t p1=wait(&a);
-    cout<<"child PID: "<<p1<<endl;
+    // pid_t p1=wait(&a);
+    cout<<"child PID: "<<p<<endl;
     return 0;
 }
