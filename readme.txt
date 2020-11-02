@@ -159,3 +159,11 @@ chapter_8 NOTICE:
                 NULL指针
 chapter_10:  signal函数,sigaction函数 https://blog.csdn.net/weibo1230123/article/details/81411827
             没看： 10.11 10.12 10.13
+
+
+chapter_11:  线程, pthread_self()函数，pthread_creat()函数，pthread_exit()
+            没看： 10.11 10.12 10.13
+chapter_11 NOTICE: 
+            1. pthread_cread()创建的线程不能保证马上就会产生新线程，所以返回的值放在主程序打印的话，打印出的值不是
+               正确的线程ID！可以在该函数的start_rtn参数中通过pthread_self()获取线程ID并打印出
+            2. 线程调用exit会导致整个进程的终止
