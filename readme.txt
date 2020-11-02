@@ -161,7 +161,7 @@ chapter_10:  signal函数,sigaction函数 https://blog.csdn.net/weibo1230123/art
             没看： 10.11 10.12 10.13
 
 
-chapter_11:  线程, pthread_self()函数，pthread_creat()函数，pthread_exit()
+chapter_11:  线程, pthread_self()函数，pthread_creat()函数，pthread_exit()， pthread_join()
             没看： 10.11 10.12 10.13
 chapter_11 NOTICE: 
             1. pthread_cread()创建的线程不能保证马上就会产生新线程，所以返回的值放在主程序打印的话，打印出的值不是
