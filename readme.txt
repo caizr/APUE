@@ -93,8 +93,8 @@ chapter_6 NOTICE:
 chapter_7:  进程环境。exit(),_Exit(),_exit()函数用于正常终止一个程序；
             atexit()在exit时添加一些要执行的函数； argc命令行参数; 
             environ环境变量; gxx -static 编译; malloc(size_t), 
-            calloc(size_t,size_t),realloc(void *,size_t),free(void *)
-            分配、释放空间; getenv(),putenv(),setenv(),unsetenv()获取、
+            calloc(size_t,size_t),re_Exit(),_exit()函数用于正常终止一个程序；
+            atexit()在exit时添加一些要执行的函数； argc命令行参putenv(),setenv(),unsetenv()获取、
             修改、删除某个环境变量
             
     疑问 :   
@@ -157,5 +157,18 @@ chapter_8 NOTICE:
                后面的语段
             10. 使用exec函数族的时候，如果是char *arg[]的参数，其数组最后一个也应该是
                 NULL指针
-chapter_10:  sigal函数,
-            fork()创建子进程；vfork()保证子进程先执行（exec或者exit之后父进程才会
+chapter_10:  signal函数,sigaction函数 https://blog.csdn.net/weibo1230123/article/details/81411827
+            没看： 10.11 10.12 10.13
+
+
+chapter_11:  线程, pthread_self()函数，pthread_creat()函数，pthread_exit()， pthread_join()
+                  pthread_cleanup_push()和pthread_cleanup_pop()这一对函数
+            没看： 10.11 10.12 10.13
+chapter_11 NOTICE: 
+            1. pthread_cread()创建的线程不能保证马上就会产生新线程，所以返回的值放在主程序打印的话，打印出的值不是
+               正确的线程ID！可以在该函数的start_rtn参数中通过pthread_self()获取线程ID并打印出
+            2. 线程调用exit会导致整个进程的终止
+            3. 在线程中创建的栈内的变量空间，退出线程后，该空间的内容可能会改变
+            4. pthread_cleanup_push()和pthread_cleanup_pop()一定要配对使用，不然会报错 (while '}'这样的错误 )
+            5. 书上说pthread_clearn在pthread_exit()的情况下才会调用，return()不会调用，但我在ubuntu 20.04的系统
+               下return仍然会调用pthread_clearn中的清理函数
