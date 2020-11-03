@@ -157,5 +157,5 @@ chapter_8 NOTICE:
                后面的语段
             10. 使用exec函数族的时候，如果是char *arg[]的参数，其数组最后一个也应该是
                 NULL指针
-chapter_10:  sigal函数
+chapter_10:  sigal函数,
             fork()创建子进程；vfork()保证子进程先执行（exec或者exit之后父进程才会
