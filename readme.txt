@@ -173,3 +173,8 @@ chapter_11 NOTICE:
             4. pthread_cleanup_push()和pthread_cleanup_pop()一定要配对使用，不然会报错 (while '}'这样的错误 )
             5. 书上说pthread_clearn在pthread_exit()的情况下才会调用，return()不会调用，但我在ubuntu 20.04的系统
                下return仍然会调用pthread_clearn中的清理函数
+
+chapter_12:  线程控制, 一些结构体，有成对的init和destroy函数
+            pthread_cread函数中的pthread attr_t参数
+            没看： getstack
+            疑问： 什么是虚地址空间？
